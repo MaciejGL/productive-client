@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
@@ -20,7 +21,7 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100%;
     width: 100%;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 62.5%;
     line-height: 1.5;
     padding: 0;
     margin: 0;
@@ -34,6 +35,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    font-size: 1.6rem;
     overscroll-behavior-y: none;
     -webkit-overflow-scrolling: touch;
     font-family: 'droid-sans-mono', 'bebas-neue-by-fontfabric', monospace;
@@ -49,3 +51,7 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export default GlobalStyles;
+
+export const ParagraphSmall = styled.p`
+  font-size: 1.2rem;
+`;
