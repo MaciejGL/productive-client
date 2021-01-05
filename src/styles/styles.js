@@ -30,7 +30,6 @@ const GlobalStyles = createGlobalStyle`
   }
   
   body {
-    //background-color: black;
     box-sizing: border-box;
     width: 100%;
     height: 100%;

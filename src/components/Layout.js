@@ -1,20 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
 // Components
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { Paper } from '@material-ui/core';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
 // Style
 import { Wrapper, Content } from './layout_style';
 import GlobalStyles from '../styles/styles';
 
 const Layout = (props) => {
+  console.log({ props });
   let theme = createMuiTheme({
     palette: {
-      type: 'dark'
+      type: props.ui.isDarkMode ? 'dark' : 'light'
     }
   });
-
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -29,4 +31,8 @@ const Layout = (props) => {
   );
 };
 
-export default Layout;
+const mapStateToProps = (state) => ({
+  ui: state.ui
+});
+
+export default connect(mapStateToProps)(Layout);

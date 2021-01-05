@@ -7,7 +7,7 @@ import { ParagraphSmall } from '../styles/styles';
 import Layout from '../components/Layout';
 
 // Markup
-const App = () => {
+const Homepage = (props) => {
   return (
     <Layout>
       <h1>The art of Productivity</h1>
@@ -20,4 +20,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Homepage;
