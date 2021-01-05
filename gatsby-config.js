@@ -1,26 +1,34 @@
 module.exports = {
   siteMetadata: {
-    title: "productivity-client",
+    title: 'productivity-client'
   },
   plugins: [
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-offline",
-    "gatsby-plugin-styled-components",
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-offline',
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-material-ui',
       options: {
-        icon: "src/images/icon.png",
-      },
+        stylesProvider: {
+          injectFirst: true
+        }
+      }
     },
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-styled-components',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
+        icon: 'src/images/icon.png'
+      }
     },
-  ],
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: './src/images/'
+      },
+      __key: 'images'
+    }
+  ]
 };

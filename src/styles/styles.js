@@ -30,8 +30,6 @@ const GlobalStyles = createGlobalStyle`
   }
   
   body {
-    background: ${({ theme }) => theme.main};
-    color: ${({ theme }) => theme.heading};
     box-sizing: border-box;
     width: 100%;
     height: 100%;
