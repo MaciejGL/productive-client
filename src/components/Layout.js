@@ -2,21 +2,29 @@ import React from 'react';
 // Components
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { Paper } from '@material-ui/core';
 // Style
 import { Wrapper, Content } from './layout_style';
 import GlobalStyles from '../styles/styles';
-import { ThemeProvider } from 'styled-components';
-import { darkMode, lightMode } from '../styles/themeContext';
 
 const Layout = (props) => {
+  let theme = createMuiTheme({
+    palette: {
+      type: 'dark'
+    }
+  });
+
   return (
-    <ThemeProvider theme={darkMode}>
+    <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Wrapper>
-        <Header />
-        <Content>{props.children}</Content>
-        <Footer />
-      </Wrapper>
+      <Paper>
+        <Wrapper>
+          <Header />
+          <Content>{props.children}</Content>
+          <Footer />
+        </Wrapper>
+      </Paper>
     </ThemeProvider>
   );
 };
