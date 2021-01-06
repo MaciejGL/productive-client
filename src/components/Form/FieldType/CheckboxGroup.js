@@ -5,7 +5,7 @@ import TextError from './TextError';
 const CheckboxGroup = (props) => {
   const { label, name, options, ...rest } = props;
   return (
-    <div className="form-control">
+    <div>
       <label>{label}</label>
       <Field name={name}>
         {({ field }) => {
