@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 // Styles
-import { BoxBtn } from '../styles/home_style';
+import { BoxBtn, HeadingCentered } from '../styles/homepage_style';
 import { ParagraphSmall } from '../styles/styles';
 // Components
 import Layout from '../components/Layout';
@@ -10,7 +10,7 @@ import Layout from '../components/Layout';
 const Homepage = (props) => {
   return (
     <Layout>
-      <h1>The art of Productivity</h1>
+      <HeadingCentered>The art of Productivity</HeadingCentered>
       <BoxBtn>
         <Link to="/register">Register</Link>
         <ParagraphSmall>or</ParagraphSmall>

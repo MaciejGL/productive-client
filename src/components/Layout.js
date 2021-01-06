@@ -4,21 +4,16 @@ import { connect } from 'react-redux';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import { Paper } from '@material-ui/core';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-
+import { ThemeProvider } from '@material-ui/core/styles';
 // Style
 import { Wrapper, Content } from './layout_style';
 import GlobalStyles from '../styles/styles';
+import { theme } from '../styles/custom_theme';
 
 const Layout = (props) => {
-  console.log({ props });
-  let theme = createMuiTheme({
-    palette: {
-      type: props.ui.isDarkMode ? 'dark' : 'light'
-    }
-  });
+  const customTheme = theme(props.ui.isDarkMode);
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={customTheme}>
       <GlobalStyles />
       <Paper>
         <Wrapper>

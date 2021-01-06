@@ -53,3 +53,9 @@ export default GlobalStyles;
 export const ParagraphSmall = styled.p`
   font-size: 1.2rem;
 `;
+
+export const TextCentered = styled.p`
+  margin: 1rem 0 0 0;
+  font-size: 1.2rem;
+  text-align: center;
+`;

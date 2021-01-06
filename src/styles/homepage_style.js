@@ -5,3 +5,7 @@ export const BoxBtn = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
+export const HeadingCentered = styled.h1`
+  text-align: center;
+`;
