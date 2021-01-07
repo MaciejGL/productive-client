@@ -4,15 +4,18 @@ import { Drawer, Divider, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Menu, Close } from '@material-ui/icons';
 import Links from './Links/Links';
-import ThemeModeSwitcher from './ThemeModeSwitcher/ThemeModeSwitcher';
+import ThemeModeSwitcher from '../../ThemeModeSwitcher/ThemeModeSwitcher';
 // Style
-import { Nav, H2, Hamburger } from './navigation_style';
+import classes from './Navigation.module.scss';
 
 const useStyles = makeStyles((theme) => ({
   DrawerRoot: {
     '&.MuiDrawer-paper': {
-      width: '75%',
+      width: '66%',
       maxWidth: '400px'
+    },
+    '&.MuiDrawer-modal': {
+      zIndex: 10
     }
   }
 }));
@@ -21,32 +24,32 @@ const Navigation = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
   const [open, setOpen] = useState(false);
-  const classes = useStyles();
+  const MuiClasses = useStyles();
 
   return (
-    <Nav>
+    <div className={classes.container}>
       {matches ? (
         <>
           <Drawer
-            classes={{ paper: classes.DrawerRoot }}
+            classes={{ paper: MuiClasses.DrawerRoot }}
             open={open}
             onClose={() => setOpen(false)}
           >
-            <H2>The Art of Productivity</H2>
+            <h1 className={classes.title}>The Art of Productivity</h1>
             <Links />
             <Divider />
             <ThemeModeSwitcher />
           </Drawer>
-          <Hamburger onClick={() => setOpen(!open)}>
+          <div className={classes.hamburger} onClick={() => setOpen(!open)}>
             {open ? <Close /> : <Menu />}
-          </Hamburger>
+          </div>
         </>
       ) : (
         <>
           <Links />
         </>
       )}
-    </Nav>
+    </div>
   );
 };
 

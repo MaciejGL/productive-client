@@ -1,21 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import * as actions from '../../../../store/actions';
+import * as actions from '../../store/actions';
 
 // components
 import { Switch } from '@material-ui/core';
 
 // Styles
 import { makeStyles } from '@material-ui/core/styles';
-import { SwitchContainer } from './themeModeSwitcher_style';
-import { TextCentered } from '../../../../styles/styles';
+import classes from './ThemeModeSwitcher.module.scss';
 
 const useStyles = makeStyles((theme) => ({
   switchBase: {
-    color: 'darkorange',
+    color: theme.palette.focus.dense,
     '&.Mui-checked': {
-      color: 'orange'
+      color: theme.palette.focus.main
     },
     '&.Mui-checked + .MuiSwitch-track': {
       backgroundColor: theme.palette.warning.dark
@@ -24,40 +23,41 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ThemeModeSwitcher = ({ isDarkMode, setDarkMode, setLightMode }) => {
-  const classes = useStyles();
+  const MuiClasses = useStyles();
 
   const handleChange = () => {
     if (isDarkMode) {
+      window.localStorage.setItem('darkMode', false);
       setLightMode();
     } else {
+      window.localStorage.setItem('darkMode', true);
       setDarkMode();
     }
   };
-
   return (
     <>
-      <TextCentered>Dark Mode</TextCentered>
-      <SwitchContainer>
+      <p className="centered">Dark Mode</p>
+      <div className={classes.container}>
         <button
           onClick={isDarkMode ? setLightMode : null}
-          className={!isDarkMode ? 'dark_mode_off' : null}
+          className={!isDarkMode ? classes['dark_mode_off'] : null}
         >
           Off
         </button>
         <Switch
           classes={{
-            switchBase: classes.switchBase
+            switchBase: MuiClasses.switchBase
           }}
           checked={isDarkMode}
           onClick={handleChange}
         />
         <button
           onClick={!isDarkMode ? setDarkMode : null}
-          className={isDarkMode ? 'dark_mode_on' : null}
+          className={isDarkMode ? classes['dark_mode_on'] : null}
         >
           On
         </button>
-      </SwitchContainer>
+      </div>
     </>
   );
 };

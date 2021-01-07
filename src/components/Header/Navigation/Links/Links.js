@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 // Components
 import { Home, PersonAdd, VpnKey } from '@material-ui/icons';
 // Styles
-import { Div, LinksContainer } from './links_style';
+import classes from './Links.module.scss';
 
 const Links = () => {
   const links = [
@@ -24,16 +24,16 @@ const Links = () => {
     }
   ];
   return (
-    <LinksContainer>
+    <div className={classes.container}>
       {links.map((el) => (
-        <Link key={el.title} to={el.path} activeClassName={'activeLink'}>
-          <Div>
+        <Link key={el.title} to={el.path} activeClassName={classes.activeLink}>
+          <div className={classes['inner_text']}>
             {el.icon}
             <p>{el.title}</p>
-          </Div>
+          </div>
         </Link>
       ))}
-    </LinksContainer>
+    </div>
   );
 };
 

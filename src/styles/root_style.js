@@ -10,8 +10,8 @@ export const PALETTE = {
 };
 
 export const BACKGROUND = {
-  dark: '#121212',
-  light: '#EEEEEE',
+  dark: '#012C36',
+  light: '#F2EBE1',
   footer: '#EFECE4'
 };
 

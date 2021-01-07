@@ -1,15 +1,15 @@
 import React from 'react';
 
-import ThemeModeSwitcher from '../Header/Navigation/ThemeModeSwitcher/ThemeModeSwitcher';
-import { FooterContainer } from './footer_style';
+import ThemeModeSwitcher from '../ThemeModeSwitcher/ThemeModeSwitcher';
+import classes from './Footer.module.scss';
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <div className={classes.container}>
       <div>
         <ThemeModeSwitcher />
       </div>
-    </FooterContainer>
+    </div>
   );
 };
 

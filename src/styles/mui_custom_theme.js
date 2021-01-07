@@ -13,6 +13,7 @@ export const theme = (isDarkMode) =>
       text_primary: { main: PALETTE.text_primary },
       text_secondary: { main: PALETTE.text_secondary },
       text_disabled: { main: PALETTE.text_disabled },
+      focus: { main: '#d38e0f', dense: '#E79800' },
       type: isDarkMode ? 'dark' : 'light',
       background: {
         default: isDarkMode ? BACKGROUND.dark : BACKGROUND.light,
@@ -40,5 +41,9 @@ export const theme = (isDarkMode) =>
         fontSize: '3rem',
         textAlign: 'center'
       }
+    },
+    zIndex: {
+      appBar: 1251,
+      modal: 1250
     }
   });

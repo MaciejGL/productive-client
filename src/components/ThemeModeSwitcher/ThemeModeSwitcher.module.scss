@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-
-export const SwitchContainer = styled.div`
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,10 +9,10 @@ export const SwitchContainer = styled.div`
     cursor: pointer;
     user-select: none;
     &.dark_mode_on {
-      color: orange;
+      color: var(--focus-color);
     }
     &.dark_mode_off {
-      color: darkorange;
+      color: var(--focus-color);
     }
   }
-`;
+}
